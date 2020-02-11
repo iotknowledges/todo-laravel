@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::get('/', 'TasksController@index');
+Route::post('tasks', 'TasksController@store');
+Route::patch('tasks/{task}', 'TasksController@update');
+Route::delete('tasks/{task}', 'TasksController@destroy');
